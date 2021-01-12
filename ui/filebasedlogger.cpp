@@ -176,7 +176,7 @@ void FileBasedLogger::writeLogEntry(const QFileInfo &fileInfo,
   if (auto f = getOpenFile(fileInfo)) {
     auto str =
         QString(QLatin1String("[%1] %2\n"))
-            .arg(timestamp.toString(QLatin1String("HH:mm:ss")), outputGenFn());
+            .arg(timestamp.toString(QLatin1String(""yyyy-MM-dd HH:mm:ss")), outputGenFn());
     f->write(str.toUtf8());
     f->flush();
   }
